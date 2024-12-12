@@ -4,6 +4,7 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
+import org.rathing.dto.ProdutoDTO;
 import org.rathing.entity.Produtos;
 import org.rathing.services.ProdutosServices;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class ProdutosResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Produtos> getProdutos() {
+    public List<ProdutoDTO> getProdutos() {
         return produtosServices.getAllProdutos();
     }
 }
