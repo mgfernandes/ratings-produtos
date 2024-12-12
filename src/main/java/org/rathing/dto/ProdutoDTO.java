@@ -7,6 +7,14 @@ public class ProdutoDTO {
     private int quantidade;
     private String medida;
 
+
+    public ProdutoDTO(String produto, String marca, int quantidade, String medida) {
+        this.produto = produto;
+        this.marca = marca;
+        this.quantidade = quantidade;
+        this.medida = medida;
+    }
+
     public String getProduto() {
         return produto;
     }

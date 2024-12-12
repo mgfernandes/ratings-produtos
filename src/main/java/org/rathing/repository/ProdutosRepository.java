@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface ProdutosRepository extends JpaRepository<Produtos, Long> {
 
-    @Query("select p.produto,p.quantidade,m.nome,ma.nome from Produtos p inner join p.medida m inner join p.marca ma ")
-    List<ProdutoDTO> findAllProdutos();
+    @Query("select p from Produtos p inner join p.medida m inner join p.marca ma ")
+    List<Produtos> findAllProdutos();
 
 }

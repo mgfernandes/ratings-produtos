@@ -19,13 +19,13 @@ private int quantidade;
 
 
 
-    @OneToMany
+    @OneToOne
     @JoinColumn(name="id", referencedColumnName="id_medida")
-    private Set<Medida> medidas = new HashSet<>();
+    private Medida medida;
 
-    @OneToMany
+    @OneToOne
     @JoinColumn(name="id", referencedColumnName="id_medida")
-    private Set<Marca> marcas = new HashSet<>();
+    private Marca marca;
 
     private int id_medida;
     private int id_marca;
@@ -42,12 +42,20 @@ private int quantidade;
         return quantidade;
     }
 
-    public Set<Marca> getMarcas() {
-        return marcas;
+    public Medida getMedida() {
+        return medida;
     }
 
-    public void setMarcas(Set<Marca> marcas) {
-        this.marcas = marcas;
+    public void setMedida(Medida medida) {
+        this.medida = medida;
+    }
+
+    public Marca getMarca() {
+        return marca;
+    }
+
+    public void setMarca(Marca marca) {
+        this.marca = marca;
     }
 
     public void setQuantidade(int quantidade) {
@@ -60,14 +68,6 @@ private int quantidade;
 
     public void setProduto(String produto) {
         this.produto = produto;
-    }
-
-    public Set<Medida> getMedidas() {
-        return medidas;
-    }
-
-    public void setMedidas(Set<Medida> medidas) {
-        this.medidas = medidas;
     }
 
     public int getId_medida() {

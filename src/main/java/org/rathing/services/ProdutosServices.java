@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ProdutosServices {
@@ -15,6 +16,10 @@ public class ProdutosServices {
     private ProdutosRepository produtosRepository;
 
     public List<ProdutoDTO> getAllProdutos(){
-        return  produtosRepository.findAllProdutos();
+
+
+        return produtosRepository.findAllProdutos().stream()
+                .map(p -> new ProdutoDTO(p.getProduto(), p.getMarca().getNome(),p.getQuantidade(),p.getMedida().getMedida()   ))
+                .collect(Collectors.toList());
     }
 }
