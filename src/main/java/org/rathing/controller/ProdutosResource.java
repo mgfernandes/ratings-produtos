@@ -5,7 +5,6 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import org.rathing.dto.ProdutoDTO;
-import org.rathing.entity.Produtos;
 import org.rathing.services.ProdutosServices;
 import org.springframework.beans.factory.annotation.Autowired;
 

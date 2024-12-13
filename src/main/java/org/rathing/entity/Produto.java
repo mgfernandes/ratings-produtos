@@ -2,29 +2,24 @@ package org.rathing.entity;
 
 import jakarta.persistence.*;
 
-import java.util.HashSet;
-import java.util.Set;
-
 @Entity
-public class Produtos {
+public class Produto {
 
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-private String produto;
+    private String produto;
 
-@Column(nullable = false)
-private int quantidade;
-
-
+    @Column(nullable = false)
+    private int quantidade;
 
     @OneToOne
-    @JoinColumn(name="id", referencedColumnName="id_medida")
+    @JoinColumn(name = "id", referencedColumnName = "id_medida")
     private Medida medida;
 
     @OneToOne
-    @JoinColumn(name="id", referencedColumnName="id_medida")
+    @JoinColumn(name = "id", referencedColumnName = "id_medida")
     private Marca marca;
 
     private int id_medida;

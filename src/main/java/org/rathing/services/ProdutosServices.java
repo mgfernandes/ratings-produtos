@@ -1,7 +1,6 @@
 package org.rathing.services;
 
 import org.rathing.dto.ProdutoDTO;
-import org.rathing.entity.Produtos;
 import org.rathing.repository.ProdutosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,7 +18,7 @@ public class ProdutosServices {
 
 
         return produtosRepository.findAllProdutos().stream()
-                .map(p -> new ProdutoDTO(p.getProduto(), p.getMarca().getNome(),p.getQuantidade(),p.getMedida().getMedida()   ))
+                .map(p -> new ProdutoDTO(p.getProduto(), p.getMarca().getNome(),p.getQuantidade(),p.getMedida().getNome()   ))
                 .collect(Collectors.toList());
     }
 }
